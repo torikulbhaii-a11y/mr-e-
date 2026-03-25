@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>YouTube SEO Master – English with Mr. E</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,sans-serif;background:#f2f2f2;color:#1a1a1a;padding:20px}
+.wrap{max-width:900px;margin:0 auto;padding:12px 0}
+/* HEADER */
+.hdr{display:flex;align-items:center;gap:12px;margin-bottom:16px;background:#fff;border:0.5px solid #e0e0e0;border-radius:14px;padding:14px 18px}
+.hdr-icon{width:44px;height:44px;background:#FF0000;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hdr-icon svg{width:24px;height:24px;fill:#fff}
+.hdr-title{font-size:18px;font-weight:700;color:#1a1a1a}
+.hdr-sub{font-size:12px;color:#888;margin-top:3px}
+.badge{background:#FF0000;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:5px;vertical-align:2px}
+.live-badge{background:#1a7a1a;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;margin-left:4px;vertical-align:2px}
+/* CARDS */
+.card{background:#fff;border:0.5px solid #e0e0e0;border-radius:14px;padding:18px;margin-bottom:12px}
+.card-title{font-size:11px;font-weight:700;color:#999;margin-bottom:12px;display:flex;align-items:center;gap:7px;text-transform:uppercase;letter-spacing:.5px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:#FF0000}
+.dot.g{background:#1a7a1a}.dot.b{background:#185FA5}.dot.o{background:#BA7517}.dot.p{background:#6B3FA0}
+/* FORM */
+label{font-size:12px;color:#555;display:block;margin-bottom:4px;font-weight:500}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:10px}
+@media(max-width:600px){.g2,.g3{grid-template-columns:1fr}}
+input[type=text],select,textarea{width:100%;background:#f7f7f7;border:0.5px solid #ddd;border-radius:9px;padding:9px 13px;font-family:inherit;font-size:13px;color:#1a1a1a;outline:none;transition:border .2s}
+input[type=text]:focus,select:focus,textarea:focus{border-color:#FF0000;background:#fff}
+textarea{resize:vertical;min-height:78px;line-height:1.6}
+.mb10{margin-bottom:10px}
+/* THUMBNAIL UPLOAD */
+.thumb-upload-area{border:2px dashed #ddd;border-radius:12px;padding:18px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:#fafafa}
+.thumb-upload-area:hover{border-color:#FF0000;background:#fff7f7}
+.thumb-upload-area.has-img{border-style:solid;border-color:#FF0000;background:#fff}
+.thumb-upload-area input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%}
+.thumb-upload-icon{font-size:28px;margin-bottom:6px}
+.thumb-upload-txt{font-size:12px;color:#888;line-height:1.5}
+.thumb-upload-txt strong{color:#FF0000}
+.thumb-preview{width:100%;max-height:160px;object-fit:contain;border-radius:8px;display:none;margin-top:8px}
+.thumb-preview.show{display:block}
+.thumb-clear{font-size:11px;color:#FF0000;cursor:pointer;margin-top:6px;display:none;text-decoration:underline}
+.thumb-clear.show{display:inline-block}
+/* BUTTONS */
+.btn-main{background:#FF0000;color:#fff;border:none;border-radius:10px;padding:12px 20px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:center;gap:8px;transition:opacity .2s;margin-top:8px}
+.btn-main:hover{opacity:.87}
+.btn-main:disabled{opacity:.4;cursor:not-allowed}
+.cp{background:#f0f0f0;color:#555;border:0.5px solid #ddd;border-radius:6px;padding:4px 11px;font-family:inherit;font-size:11px;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .15s}
+.cp:hover{background:#e5e5e5;color:#1a1a1a}
+.cp.ok{background:#e4f2e4;color:#1a7a1a;border-color:#9fcf9f}
+/* TABS */
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:12px}
+.tab{padding:7px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;border:0.5px solid #ddd;background:#fff;color:#777;transition:all .15s;white-space:nowrap}
+.tab.on{background:#FF0000;color:#fff;border-color:#FF0000}
+.tab-panel{display:none}
+.tab-panel.show{display:block}
+.row-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+/* TITLE ITEMS */
+.title-item{display:flex;align-items:flex-start;gap:9px;padding:10px 13px;background:#f8f8f8;border:0.5px solid #e8e8e8;border-radius:9px;margin-bottom:6px;cursor:pointer;transition:border .15s}
+.title-item:hover,.title-item.sel{border-color:#FF0000;background:#fff7f7}
+.tnum{font-size:11px;font-weight:700;color:#FF0000;min-width:16px;padding-top:1px;flex-shrink:0}
+.ttxt{font-size:13px;color:#1a1a1a;flex:1;line-height:1.45}
+/* DESC */
+.desc-box{background:#f8f8f8;border:0.5px solid #e8e8e8;border-radius:9px;padding:13px 15px;font-size:13px;color:#1a1a1a;line-height:1.75;white-space:pre-wrap;max-height:320px;overflow-y:auto}
+.ccount{font-size:11px;color:#bbb;text-align:right;margin-top:4px}
+/* TAGS */
+.tags-wrap{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12px;color:#1a1a1a;background:#f0f0f0;border:0.5px solid #ddd;border-radius:20px;padding:4px 11px;cursor:pointer;transition:all .15s}
+.tag:hover{border-color:#FF0000;color:#FF0000}
+.tag.p1{font-weight:700;border-color:#FF0000;color:#FF0000;background:#fff5f5}
+.tag.p2{font-weight:600;border-color:#d44;color:#d44}
+.htag{font-size:12px;color:#185FA5;background:#e8f0fb;border:0.5px solid #b5cef5;border-radius:20px;padding:4px 11px;cursor:pointer}
+.htag:hover{background:#ccdcf5}
+/* RESEARCH */
+.research-box{background:#f0f7ff;border:0.5px solid #b5cef5;border-radius:10px;padding:13px 15px;margin-bottom:10px}
+.research-box h4{font-size:12px;font-weight:700;color:#185FA5;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.src-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px}
+.yt-src{background:#fff0f0;color:#cc0000;border:0.5px solid #ffb3b3}
+.gg-src{background:#e8f0fe;color:#185FA5;border:0.5px solid #b5cef5}
+.competitor-item{background:#fff;border:0.5px solid #e0e0e0;border-radius:8px;padding:9px 12px;margin-bottom:6px}
+.comp-title{font-size:12px;font-weight:600;color:#1a1a1a;margin-bottom:2px}
+.comp-meta{font-size:11px;color:#888}
+.kw-row{margin-bottom:10px}
+.trend-bar{height:7px;background:#e5e5e5;border-radius:4px;overflow:hidden;margin-top:3px}
+.trend-fill{height:100%;background:linear-gradient(90deg,#FF0000,#ff6b6b);border-radius:4px}
+/* KEYWORD RESEARCH TAB */
+.kw-card{background:#fff8f0;border:0.5px solid #f5c07a;border-radius:10px;padding:12px 14px;margin-bottom:8px}
+.kw-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.kw-name{font-size:13px;font-weight:600;color:#1a1a1a}
+.kw-vol{font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px}
+.kw-vol.hi{background:#e4f2e4;color:#1a7a1a}
+.kw-vol.mid{background:#fff3e0;color:#BA7517}
+.kw-vol.lo{background:#f5f5f5;color:#888}
+.kw-meta{font-size:11px;color:#888;margin-bottom:4px}
+.kw-diff{display:flex;align-items:center;gap:6px;font-size:11px;color:#555}
+/* THUMBNAIL IDEAS */
+.thumb-item{display:flex;gap:10px;align-items:flex-start;padding:11px 13px;background:#f8f8f8;border:0.5px solid #e8e8e8;border-radius:9px;margin-bottom:7px}
+.thn{font-size:11px;font-weight:700;color:#185FA5;min-width:20px;padding-top:2px}
+.th-main{font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:3px;line-height:1.4}
+.th-why{font-size:12px;color:#666;line-height:1.4}
+/* AI PROMPTS */
+.prompt-card{background:#eef3ff;border:0.5px solid #b5c8f4;border-radius:10px;padding:13px 15px;margin-bottom:10px}
+.prompt-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.prompt-lbl{font-size:11px;font-weight:700;color:#185FA5;background:#dce8ff;border-radius:20px;padding:2px 9px}
+.prompt-scene{font-size:12px;font-weight:600;color:#185FA5;margin-bottom:5px}
+.prompt-txt{font-size:12px;color:#1a1a1a;line-height:1.6;font-family:monospace;background:#fff;border:0.5px solid #c5d5f0;border-radius:7px;padding:9px 11px;white-space:pre-wrap;word-break:break-word}
+/* OVERLAY */
+.overlay-card{background:#fffaf0;border:0.5px solid #FAC775;border-radius:10px;padding:12px 15px;margin-bottom:8px}
+.ov-preview{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:5px}
+.ov-red{background:#FF0000;color:#fff;font-size:13px;font-weight:800;padding:5px 13px;border-radius:7px}
+.ov-dark{background:#1a1a1a;color:#fff;font-size:11px;font-weight:600;padding:3px 11px;border-radius:5px}
+.ov-style{font-size:11px;color:#888;margin-top:4px}
+/* FILENAME */
+.filename-box{background:#f0fff4;border:0.5px solid #9fcf9f;border-radius:10px;padding:13px 15px}
+.filename-val{font-size:14px;font-weight:700;color:#1a7a1a;font-family:monospace;margin:6px 0;word-break:break-all}
+.filename-tip{font-size:11px;color:#666;line-height:1.5}
+/* SCORE */
+.score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+@media(max-width:520px){.score-grid{grid-template-columns:repeat(2,1fr)}}
+.score-box{background:#f8f8f8;border:0.5px solid #e8e8e8;border-radius:10px;padding:12px 10px;text-align:center}
+.score-val{font-size:24px;font-weight:800}
+.score-val.hi{color:#1a7a1a}.score-val.mid{color:#BA7517}.score-val.lo{color:#E24B4A}
+.score-lbl{font-size:10px;color:#aaa;margin-top:3px;line-height:1.3}
+.analysis-box{background:#f8f8f8;border:0.5px solid #e8e8e8;border-radius:9px;padding:13px 15px;font-size:13px;color:#1a1a1a;line-height:1.85;white-space:pre-wrap}
+/* LOADER */
+.loader-card{background:#fff;border:0.5px solid #e0e0e0;border-radius:14px;padding:28px 18px;text-align:center;margin-bottom:12px}
+.spin{width:36px;height:36px;border:3px solid #eee;border-top-color:#FF0000;border-radius:50%;animation:sp .7s linear infinite;margin:0 auto 14px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.loader-steps{list-style:none;text-align:left;max-width:360px;margin:14px auto 0;padding:0}
+.loader-steps li{font-size:12px;color:#ccc;padding:5px 0 5px 26px;position:relative;transition:color .3s}
+.loader-steps li::before{content:'○';position:absolute;left:0;font-size:11px;color:#ccc}
+.loader-steps li.done{color:#1a7a1a}.loader-steps li.done::before{content:'✓';color:#1a7a1a}
+.loader-steps li.active{color:#FF0000;font-weight:600}.loader-steps li.active::before{content:'▶';color:#FF0000}
+/* MISC */
+.divider{border:none;border-top:0.5px solid #eee;margin:13px 0}
+.info-tip{font-size:11px;color:#999;margin-top:8px;padding:7px 10px;background:#f8f8f8;border-radius:6px;border-left:3px solid #FF0000;line-height:1.5}
+.section-sub{font-size:12px;font-weight:700;color:#555;margin:12px 0 8px;display:flex;align-items:center;gap:6px}
+.output-wrap{display:none}.output-wrap.show{display:block}
+.toast{position:fixed;bottom:22px;right:22px;background:#1a1a1a;color:#fff;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:500;opacity:0;transition:opacity .25s;pointer-events:none;z-index:9999}
+.toast.show{opacity:1}
+.thumb-analysis-box{background:#fff0f5;border:0.5px solid #ffb3cc;border-radius:10px;padding:12px 14px;margin-bottom:12px;font-size:13px;color:#1a1a1a;line-height:1.6;white-space:pre-wrap}
+.thumb-analysis-box strong{color:#cc0044}
+.apikey-card{background:#fffbe6;border:0.5px solid #f5c842;border-radius:14px;padding:14px 18px;margin-bottom:12px}
+.apikey-card label{font-size:12px;font-weight:700;color:#7a5800;margin-bottom:6px;display:block}
+.apikey-row{display:flex;gap:8px;align-items:center}
+.apikey-row input[type=password],.apikey-row input[type=text]{flex:1;background:#fff;border:0.5px solid #f5c842;border-radius:9px;padding:9px 13px;font-family:monospace;font-size:13px;color:#1a1a1a;outline:none}
+.apikey-row input:focus{border-color:#FF0000}
+.apikey-tip{font-size:11px;color:#888;margin-top:6px;line-height:1.5}
+.apikey-tip a{color:#185FA5}
+.apikey-saved{font-size:11px;color:#1a7a1a;font-weight:600;margin-left:4px;display:none}
+.extra-keys{margin-top:10px;padding-top:10px;border-top:0.5px solid #f0d080}
+.extra-keys .g2{margin-bottom:0}
+.rate-limit-banner{background:#fff0f0;border:0.5px solid #ffb3b3;border-radius:10px;padding:12px 16px;margin-bottom:12px;display:none}
+.rate-limit-banner h4{font-size:13px;font-weight:700;color:#cc0000;margin-bottom:4px}
+.rate-limit-banner p{font-size:12px;color:#555;line-height:1.5}
+/* IMPROVED PROMPT CARD — prompt+text together */
+.prompt-card-v2{background:#eef3ff;border:0.5px solid #b5c8f4;border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.prompt-card-v2-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.prompt-lbl{font-size:11px;font-weight:700;color:#185FA5;background:#dce8ff;border-radius:20px;padding:2px 9px}
+.prompt-scene{font-size:12px;font-weight:600;color:#185FA5;margin-bottom:6px}
+.prompt-txt{font-size:12px;color:#1a1a1a;line-height:1.6;font-family:monospace;background:#fff;border:0.5px solid #c5d5f0;border-radius:7px;padding:9px 11px;white-space:pre-wrap;word-break:break-word;margin-bottom:8px}
+.prompt-text-overlay{background:#fff8e6;border:0.5px solid #FAC775;border-radius:8px;padding:9px 12px;margin-bottom:8px}
+.prompt-text-overlay-lbl{font-size:10px;font-weight:700;color:#7a5800;text-transform:uppercase;letter-spacing:.4px;margin-bottom:5px}
+.pto-preview{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.pto-red{background:#FF0000;color:#fff;font-size:13px;font-weight:800;padding:4px 12px;border-radius:6px}
+.pto-dark{background:#1a1a1a;color:#fff;font-size:11px;font-weight:600;padding:3px 10px;border-radius:5px}
+.pto-placement{font-size:11px;color:#888}
+.prompt-copy-all{background:#FF0000;color:#fff;border:none;border-radius:7px;padding:6px 14px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;width:100%;transition:opacity .2s}
+.prompt-copy-all:hover{opacity:.85}
+.prompt-copy-all.ok{background:#1a7a1a}
+.desc-part{margin-bottom:12px}
+.desc-part-hdr{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.desc-part-num{width:22px;height:22px;background:#FF0000;color:#fff;border-radius:50%;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.desc-part-title{font-size:12px;font-weight:700;color:#333;flex:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="hdr">
+  <div class="hdr-icon">
+    <svg viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6M21.56 7.17c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.65.28-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.65-.28C5.47 5.08 6.66 5.05 7.76 5.05L12 5c4.19 0 6.8.16 7.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+  </div>
+  <div style="flex:1">
+    <div class="hdr-title">YouTube SEO Master <span class="badge">AI</span><span class="live-badge">LIVE Data</span></div>
+    <div class="hdr-sub">English with Mr. E &nbsp;·&nbsp; Slow English Channel &nbsp;·&nbsp; Real YouTube + Google Research</div>
+  </div>
+</div>
+
+<!-- RATE LIMIT BANNER -->
+<div class="rate-limit-banner" id="rateLimitBanner">
+  <h4>API Rate Limit Reached</h4>
+  <p id="rateLimitMsg">You have hit the usage limit. Please wait and try again.</p>
+</div>
+
+<!-- API KEY CARD -->
+<div class="apikey-card" id="apikeyCard">
+  <label>Anthropic API Key (required)</label>
+  <div class="apikey-row">
+    <input type="password" id="apiKeyInput" placeholder="sk-ant-api03-..." autocomplete="off" oninput="saveKey()">
+    <button class="cp" onclick="toggleKeyVis()" id="keyVisBtn" style="padding:6px 12px;font-size:12px">Show</button>
+    <span class="apikey-saved" id="keySaved">Saved</span>
+  </div>
+  <div class="apikey-tip">Get your key at <a href="https://console.anthropic.com/settings/keys" target="_blank">console.anthropic.com</a>. Stored only in this browser.</div>
+  <div class="extra-keys">
+    <div class="g2">
+      <div>
+        <label style="color:#7a5800">YouTube Data API v3 Key (optional — for real video data)</label>
+        <input type="password" id="ytApiKey" placeholder="AIza..." autocomplete="off" oninput="saveYtKey()">
+        <div class="apikey-tip">Free at <a href="https://console.cloud.google.com" target="_blank">console.cloud.google.com</a> → Enable YouTube Data API v3</div>
+      </div>
+      <div>
+        <label style="color:#1a7a1a">Free Keyword Tools (no key needed — auto-used)</label>
+        <div style="background:#f0fff4;border:0.5px solid #9fcf9f;border-radius:8px;padding:9px 12px">
+          <div style="font-size:12px;color:#1a1a1a;line-height:1.8">
+            <span style="font-weight:700;color:#1a7a1a">✓ YouTube Autocomplete</span> — real YouTube search suggestions<br>
+            <span style="font-weight:700;color:#1a7a1a">✓ Google Suggest API</span> — what people search on Google<br>
+            <span style="font-weight:700;color:#1a7a1a">✓ Datamuse API</span> — related keywords &amp; phrases<br>
+            <span style="font-size:11px;color:#888">These run automatically when you generate — completely free, no signup</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INPUT CARD -->
+<div class="card">
+  <div class="card-title"><div class="dot"></div>Video Details</div>
+  <div class="mb10">
+    <label>Video Topic / Title Idea / Script</label>
+    <textarea id="inp" placeholder="Example: How to use Present Perfect Tense&#10;or: Modal verbs explained slowly&#10;or: 10 common English mistakes"></textarea>
+  </div>
+  <div class="g3">
+    <div>
+      <label>Video Type</label>
+      <select id="vtype">
+        <option>Grammar Tutorial</option><option>Vocabulary Lesson</option><option>Speaking Skills</option>
+        <option>Pronunciation</option><option>Phrases &amp; Expressions</option><option>Common Mistakes</option>
+        <option>Conversation Practice</option><option>IELTS / TOEFL Prep</option>
+        <option>Slow English Story</option><option>Daily English</option>
+      </select>
+    </div>
+    <div>
+      <label>Target Level</label>
+      <select id="level">
+        <option>Beginner (A1-A2)</option><option>Intermediate (B1-B2)</option>
+        <option>Advanced (C1-C2)</option><option>All Levels</option>
+      </select>
+    </div>
+    <div>
+      <label>Video Length</label>
+      <select id="vlen">
+        <option>Short (under 5 min)</option><option selected>Medium (5-15 min)</option>
+        <option>Long (15-30 min)</option><option>Very Long (30+ min)</option>
+      </select>
+    </div>
+  </div>
+  <div class="g2">
+    <div>
+      <label>Extra Keywords (optional)</label>
+      <input type="text" id="xkw" placeholder="e.g. slow English, spoken English">
+    </div>
+    <div>
+      <label>Content Style</label>
+      <select id="cstyle">
+        <option>Educational / Structured</option><option>Storytelling / Slow English</option>
+        <option>Quick Tips</option><option>Deep Explanation</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- THUMBNAIL UPLOAD -->
+  <div style="margin-bottom:10px">
+    <label>Reference Thumbnail (optional — upload to get accurate AI prompts)</label>
+    <div class="thumb-upload-area" id="uploadArea">
+      <input type="file" id="thumbFile" accept="image/*" onchange="handleThumbUpload(this)">
+      <div id="uploadPlaceholder">
+        <div class="thumb-upload-icon">🖼️</div>
+        <div class="thumb-upload-txt">Click or drag your reference thumbnail here<br><strong>AI will analyze it and create matching prompts</strong></div>
+      </div>
+      <img id="thumbPreview" class="thumb-preview" alt="Thumbnail preview">
+      <div id="thumbSizeInfo" style="font-size:11px;color:#1a7a1a;margin-top:4px;display:block"></div>
+      <div class="thumb-clear" id="thumbClear" onclick="clearThumb()">Remove image</div>
+    </div>
+  </div>
+
+  <button class="btn-main" id="genBtn" onclick="startGenerate()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    Search YouTube &amp; Google, Then Generate Full SEO
+  </button>
+</div>
+
+<!-- LOADER -->
+<div id="loaderCard" class="loader-card" style="display:none">
+  <div class="spin"></div>
+  <div style="font-size:14px;font-weight:600;color:#1a1a1a;margin-bottom:4px" id="loaderMain">Starting research...</div>
+  <div style="font-size:12px;color:#999" id="loaderSub">Takes 20-40 seconds — collecting real data</div>
+  <ul class="loader-steps">
+    <li id="step1">Searching YouTube for top ranking videos</li>
+    <li id="step2">Analyzing competitor titles and tags</li>
+    <li id="step3">Keyword research via Google trends</li>
+    <li id="step4">Finding high-volume search keywords</li>
+    <li id="step5">Analyzing your reference thumbnail</li>
+    <li id="step6">Building full SEO package</li>
+    <li id="step7">Generating Pixar 3D thumbnail prompts</li>
+  </ul>
+</div>
+
+<!-- OUTPUT -->
+<div id="outputWrap" class="output-wrap">
+  <div class="tabs">
+    <div class="tab on"  onclick="showTab('research',this)">Live Research</div>
+    <div class="tab" onclick="showTab('keywords',this)">Keyword Research</div>
+    <div class="tab" onclick="showTab('titles',this)">Titles</div>
+    <div class="tab" onclick="showTab('desc',this)">Description</div>
+    <div class="tab" onclick="showTab('tags',this)">Tags</div>
+    <div class="tab" onclick="showTab('thumbs',this)">Thumbnails</div>
+    <div class="tab" onclick="showTab('aiprompts',this)">AI Prompts</div>
+    <div class="tab" onclick="showTab('score',this)">SEO Score</div>
+  </div>
+
+  <!-- LIVE RESEARCH -->
+  <div id="panel-research" class="tab-panel show card">
+    <div class="card-title"><div class="dot g"></div>Live YouTube + Google Research</div>
+    <div class="research-box" id="freeKwBox" style="display:none;background:#f0fff4;border-color:#9fcf9f">
+      <h4 style="color:#1a7a1a">
+        <span style="background:#d4edda;color:#1a7a1a;border:0.5px solid #9fcf9f;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px">FREE</span>
+        &nbsp;Live Keywords — YouTube Autocomplete + Google Suggest + Datamuse
+      </h4>
+      <div class="tags-wrap" id="freeKwChips"></div>
+      <div style="font-size:11px;color:#888;margin-top:6px">Click any keyword to copy · These were also fed into your AI SEO output</div>
+    </div>
+
+    <div class="research-box" id="ytApiBox" style="display:none;background:#fff5f5;border-color:#ffb3b3">
+      <h4 style="color:#cc0000">
+        <span class="src-badge yt-src">YouTube Data API v3</span>&nbsp; Real Videos — Live from YouTube
+      </h4>
+      <div id="ytApiList"></div>
+      <div style="font-size:11px;color:#888;margin-top:6px">Real view counts · Click title to open on YouTube</div>
+    </div>
+
+    <div class="research-box">
+      <h4><span class="src-badge yt-src">YouTube</span>&nbsp; Top Ranking Competitor Videos</h4>
+      <div id="competitorsList"></div>
+    </div>
+    <div class="research-box">
+      <h4><span class="src-badge gg-src">Google</span>&nbsp; High-Volume Keywords Found</h4>
+      <div id="keywordsListResearch"></div>
+    </div>
+    <div class="research-box">
+      <h4>Research Summary</h4>
+      <div id="researchSummary" style="font-size:13px;color:#333;line-height:1.7;white-space:pre-wrap"></div>
+    </div>
+  </div>
+
+  <!-- KEYWORD RESEARCH TAB -->
+  <div id="panel-keywords" class="tab-panel card" style="display:none">
+    <div class="row-hdr">
+      <div class="card-title" style="margin-bottom:0"><div class="dot o"></div>Keyword Research (VidIQ Style)</div>
+      <button class="cp" id="cpAllKw" onclick="copyAllKw()">Copy All Keywords</button>
+    </div>
+    <div class="info-tip" style="margin:8px 0 12px">Keywords people are actually searching on YouTube and Google for your topic. Red = Primary, Orange = Secondary.</div>
+    <div id="kwResearchOut"></div>
+    <div class="divider"></div>
+    <div class="section-sub"><div class="dot b"></div>Long-Tail Keywords (Low Competition, High Opportunity)</div>
+    <div class="tags-wrap" id="longTailOut"></div>
+  </div>
+
+  <!-- TITLES -->
+  <div id="panel-titles" class="tab-panel card" style="display:none">
+    <div class="row-hdr">
+      <div class="card-title" style="margin-bottom:0"><div class="dot"></div>5 Research-Backed Titles</div>
+      <button class="cp" id="cpAllTitles" onclick="copyAllTitles()">Copy All</button>
+    </div>
+    <div id="titlesOut" style="margin-top:10px"></div>
+    <div class="info-tip">Titles built from real keywords found in top-ranking YouTube videos on your topic</div>
+  </div>
+
+  <!-- DESCRIPTION -->
+  <div id="panel-desc" class="tab-panel card" style="display:none">
+    <div class="row-hdr">
+      <div class="card-title" style="margin-bottom:0"><div class="dot g"></div>SEO Description — 5 Parts</div>
+      <button class="cp" id="cpDescFull" onclick="copyFullDesc()">Copy Full Description</button>
+    </div>
+    <div class="info-tip" style="margin:8px 0 14px">Click <strong>Copy Full Description</strong> — copies all 5 parts together, ready to paste into YouTube.</div>
+
+    <div class="desc-part">
+      <div class="desc-part-hdr"><span class="desc-part-num">1</span><span class="desc-part-title">Main Keyword Hook (first 2 lines)</span><button class="cp" id="cp1" onclick="copyEl('dp1','cp1')">Copy</button></div>
+      <div class="desc-box" id="dp1" style="min-height:60px;border-left:3px solid #FF0000"></div>
+    </div>
+    <div class="desc-part">
+      <div class="desc-part-hdr"><span class="desc-part-num">2</span><span class="desc-part-title">Body — Keywords Spread Throughout</span><button class="cp" id="cp2" onclick="copyEl('dp2','cp2')">Copy</button></div>
+      <div class="desc-box" id="dp2" style="min-height:100px;max-height:220px;border-left:3px solid #1a7a1a"></div>
+    </div>
+    <div class="desc-part">
+      <div class="desc-part-hdr"><span class="desc-part-num">3</span><span class="desc-part-title">Timestamps / Chapters</span><button class="cp" id="cp3" onclick="copyEl('dp3','cp3')">Copy</button></div>
+      <div class="desc-box" id="dp3" style="min-height:80px;font-family:monospace;font-size:12px;border-left:3px solid #185FA5"></div>
+    </div>
+    <div class="desc-part">
+      <div class="desc-part-hdr"><span class="desc-part-num">4</span><span class="desc-part-title">Call To Action (Subscribe + Links)</span><button class="cp" id="cp4" onclick="copyEl('dp4','cp4')">Copy</button></div>
+      <div class="desc-box" id="dp4" style="min-height:80px;border-left:3px solid #BA7517"></div>
+    </div>
+    <div class="desc-part">
+      <div class="desc-part-hdr"><span class="desc-part-num">5</span><span class="desc-part-title">Hashtags (3-5)</span><button class="cp" id="cp5" onclick="copyEl('dp5','cp5')">Copy</button></div>
+      <div class="desc-box" id="dp5" style="min-height:36px;font-weight:700;color:#185FA5;border-left:3px solid #6B3FA0"></div>
+    </div>
+
+    <div class="ccount" id="descChars"></div>
+    <div class="divider"></div>
+    <div class="section-sub"><div class="dot b"></div>Hashtags (click to copy individually)</div>
+    <div class="tags-wrap" id="hashtagsOut"></div>
+    <div class="divider"></div>
+    <div class="section-sub"><div class="dot g"></div>Video Filename (rename before uploading)</div>
+    <div class="filename-box" id="filenameBox">
+      <div class="filename-val" id="filenameVal">—</div>
+      <div class="filename-tip">Rename your video file to this before uploading. YouTube reads the filename as a ranking signal.</div>
+      <button class="cp" id="cpFilename" style="margin-top:8px" onclick="copyEl('filenameVal','cpFilename')">Copy Filename</button>
+    </div>
+  </div>
+
+  <!-- TAGS -->
+  <div id="panel-tags" class="tab-panel card" style="display:none">
+    <div class="row-hdr">
+      <div class="card-title" style="margin-bottom:0"><div class="dot o"></div>Video Tags — Max 500 Characters</div>
+      <button class="cp" id="cpTags" onclick="copyEl('hiddenTags','cpTags')">Copy All Tags</button>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin:8px 0 6px;padding:7px 10px;background:#f8f8f8;border-radius:8px;border:0.5px solid #e8e8e8">
+      <span style="font-size:12px;font-weight:600;color:#555">YouTube Tag Limit</span>
+      <span style="font-size:12px;font-weight:700" id="tagCharCounter">0 / 500 characters</span>
+    </div>
+    <div id="tagDropWarn" style="display:none;font-size:11px;color:#BA7517;background:#fff8e6;border:0.5px solid #f5c07a;border-radius:6px;padding:5px 10px;margin-bottom:8px"></div>
+    <div class="tags-wrap" id="tagsOut" style="margin-top:8px"></div>
+    <input type="hidden" id="hiddenTags">
+    <div class="info-tip" style="margin-top:10px">
+      <strong style="color:#FF0000">Red</strong> = Primary (highest search volume) &nbsp;·&nbsp;
+      <strong style="color:#d44">Orange</strong> = Secondary &nbsp;·&nbsp;
+      Grey = Supporting &nbsp;·&nbsp; Click any tag to copy it
+    </div>
+  </div>
+
+  <!-- THUMBNAILS -->
+  <div id="panel-thumbs" class="tab-panel card" style="display:none">
+    <div id="thumbAnalysisWrap" style="display:none">
+      <div class="section-sub"><div class="dot p"></div>Your Reference Thumbnail — AI Analysis</div>
+      <div class="thumb-analysis-box" id="thumbAnalysisOut"></div>
+    </div>
+    <div class="card-title"><div class="dot b"></div>5 High-CTR Thumbnail Concepts (Pixar 3D Style)</div>
+    <div id="thumbsOut"></div>
+    <div class="divider"></div>
+    <div class="section-sub"><div class="dot g"></div>Text Overlay Options</div>
+    <div class="tags-wrap" id="thumbTextsOut" style="margin-top:8px"></div>
+  </div>
+
+  <!-- AI PROMPTS -->
+  <div id="panel-aiprompts" class="tab-panel card" style="display:none">
+    <div class="row-hdr">
+      <div class="card-title" style="margin-bottom:0"><div class="dot b"></div>Pixar 3D Cartoon AI Image Prompts</div>
+      <button class="cp" id="cpAllPrompts" onclick="copyAllPrompts()">Copy All</button>
+    </div>
+    <div id="thumbAnalysisWrap2" style="display:none">
+      <div class="thumb-analysis-box" id="thumbAnalysisOut2" style="margin:10px 0"></div>
+    </div>
+    <div class="info-tip" style="margin-bottom:14px">Paste into <strong>Midjourney</strong>, <strong>DALL-E 3</strong>, <strong>Leonardo AI</strong>, or <strong>Adobe Firefly</strong>. Then add text overlay in Canva.</div>
+    <div id="aiPromptsOut"></div>
+    <div class="divider"></div>
+    <div class="section-sub"><div class="dot o"></div>SLOW ENGLISH Text Overlay Layout (for Canva)</div>
+    <div id="textOverlaysOut" style="margin-top:10px"></div>
+  </div>
+
+  <!-- SEO SCORE -->
+  <div id="panel-score" class="tab-panel card" style="display:none">
+    <div class="card-title"><div class="dot g"></div>SEO Score — Based on Real Research</div>
+    <div class="score-grid">
+      <div class="score-box"><div class="score-val" id="s1">-</div><div class="score-lbl">Overall SEO</div></div>
+      <div class="score-box"><div class="score-val" id="s2">-</div><div class="score-lbl">CTR Potential</div></div>
+      <div class="score-box"><div class="score-val" id="s3">-</div><div class="score-lbl">Search Rank</div></div>
+      <div class="score-box"><div class="score-val" id="s4">-</div><div class="score-lbl">Competition</div></div>
+    </div>
+    <div class="analysis-box" id="analysisOut"></div>
+  </div>
+</div><!-- /outputWrap -->
+</div><!-- /wrap -->
+<div class="toast" id="toast"></div>
+
+<script>
+var allTitles=[], allPrompts=[], allKwArr=[];
+var thumbBase64=null, thumbMime='image/jpeg';
+
+// Load saved keys on startup
+(function(){
+  try{
+    var ak=localStorage.getItem('anthropic_api_key');
+    if(ak){document.getElementById('apiKeyInput').value=ak;document.getElementById('keySaved').style.display='inline';}
+    var yk=localStorage.getItem('yt_api_key');
+    if(yk)document.getElementById('ytApiKey').value=yk;
+    var dk=localStorage.getItem('dfs_api_key');
+    if(dk)document.getElementById('dfsKey').value=dk;
+  }catch(e){}
+})();
+
+function saveKey(){
+  try{var v=document.getElementById('apiKeyInput').value.trim();if(v.length>10){localStorage.setItem('anthropic_api_key',v);document.getElementById('keySaved').style.display='inline';}}catch(e){}
+}
+function saveYtKey(){try{localStorage.setItem('yt_api_key',document.getElementById('ytApiKey').value.trim());}catch(e){}}
+
+// -- FREE KEYWORD APIS (no key needed) --------------------------
+function fetchWithTimeout(promise, ms){
+  var timeout=new Promise(function(res){setTimeout(function(){res([]);},ms);});
+  return Promise.race([promise,timeout]);
+}
+
+function fetchYouTubeSuggest(query){
+  var proxy='https://api.allorigins.win/raw?url=';
+  var url='https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q='+encodeURIComponent(query);
+  return fetch(proxy+encodeURIComponent(url))
+    .then(function(r){return r.json();})
+    .then(function(j){return Array.isArray(j)&&j[1]?j[1].slice(0,8):[];})
+    .catch(function(){return [];});
+}
+
+function fetchGoogleSuggest(query){
+  var proxy='https://api.allorigins.win/raw?url=';
+  var url='https://suggestqueries.google.com/complete/search?client=firefox&q='+encodeURIComponent(query);
+  return fetch(proxy+encodeURIComponent(url))
+    .then(function(r){return r.json();})
+    .then(function(j){return Array.isArray(j)&&j[1]?j[1].slice(0,6):[];})
+    .catch(function(){return [];});
+}
+
+function fetchDatamuse(query){
+  return fetch('https://api.datamuse.com/sug?s='+encodeURIComponent(query)+'&max=8')
+    .then(function(r){return r.json();})
+    .then(function(j){return Array.isArray(j)?j.map(function(x){return x.word||x}):[];})
+    .catch(function(){return [];});
+}
+
+function fetchAllFreeKeywords(topic){
+  // Only 2 calls (fastest sources), each with 3s timeout
+  return Promise.all([
+    fetchWithTimeout(fetchYouTubeSuggest(topic), 3000),
+    fetchWithTimeout(fetchGoogleSuggest('learn english '+topic), 3000)
+  ]).then(function(results){
+    var all=[];
+    results.forEach(function(r){r.forEach(function(k){if(k&&all.indexOf(k)===-1)all.push(k);});});
+    return all.slice(0,15);
+  });
+}
+
+// -- YOUTUBE DATA API v3 (via CORS proxy) ----------------------
+function fetchYouTubeDataAPI(query, apiKey){
+  if(!apiKey) return Promise.resolve(null);
+  var PROXY='https://api.allorigins.win/raw?url=';
+
+  var searchUrl='https://www.googleapis.com/youtube/v3/search'
+    +'?part=snippet&type=video&maxResults=8&order=viewCount'
+    +'&q='+encodeURIComponent(query)
+    +'&key='+encodeURIComponent(apiKey);
+
+  return fetch(PROXY+encodeURIComponent(searchUrl))
+    .then(function(r){
+      if(!r.ok) throw new Error('Proxy error '+r.status);
+      return r.json();
+    })
+    .then(function(data){
+      if(data.error) throw new Error(data.error.message||'YouTube API error');
+      var items=data.items||[];
+      var videoIds=items.map(function(v){return v.id&&v.id.videoId;}).filter(Boolean);
+      if(!videoIds.length) return {videos:[], raw:[]};
+
+      var statsUrl='https://www.googleapis.com/youtube/v3/videos'
+        +'?part=statistics,contentDetails&id='+videoIds.join(',')
+        +'&key='+encodeURIComponent(apiKey);
+
+      return fetch(PROXY+encodeURIComponent(statsUrl))
+        .then(function(r){ return r.json(); })
+        .then(function(statsData){
+          var statsMap={};
+          (statsData.items||[]).forEach(function(s){ statsMap[s.id]=s.statistics||{}; });
+          var videos=items.map(function(v){
+            var vid=v.id&&v.id.videoId;
+            var sn=v.snippet||{};
+            var stats=statsMap[vid]||{};
+            var views=parseInt(stats.viewCount||0);
+            return {
+              videoId: vid,
+              title: sn.title||'',
+              channel: sn.channelTitle||'',
+              description: (sn.description||'').substring(0,120),
+              views: views,
+              viewsFormatted: views>=1000000?(Math.round(views/100000)/10)+'M views'
+                             :views>=1000?(Math.round(views/100)/10)+'K views'
+                             :views+' views',
+              likes: parseInt(stats.likeCount||0),
+              publishedAt: sn.publishedAt?sn.publishedAt.substring(0,10):''
+            };
+          });
+          return {videos: videos, raw: data};
+        });
+    })
+    .catch(function(e){ console.warn('YouTube API error:',e.message); return null; });
+}
+
+function toggleKeyVis(){
+  var inp=document.getElementById('apiKeyInput');
+  var btn=document.getElementById('keyVisBtn');
+  if(inp.type==='password'){inp.type='text';btn.textContent='Hide';}
+  else{inp.type='password';btn.textContent='Show';}
+}
+
+function showRateLimit(errObj){
+  var banner=document.getElementById('rateLimitBanner');
+  var msg=document.getElementById('rateLimitMsg');
+  banner.style.display='block';
+  var resetAt=errObj&&errObj.windows&&errObj.windows['5h']&&errObj.windows['5h'].resets_at;
+  if(resetAt){
+    var d=new Date(resetAt*1000);
+    var now=new Date();
+    var diffMs=d-now;
+    var diffMin=Math.ceil(diffMs/60000);
+    var timeStr=d.toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});
+    msg.textContent='Your 5-hour usage limit is exceeded. Resets at '+timeStr+' (in about '+diffMin+' minutes). Please wait then try again.';
+  } else {
+    msg.textContent='Usage limit exceeded. Please wait a few hours and try again.';
+  }
+  banner.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+var STEPS=[
+  {id:'step1',main:'Searching YouTube for top ranking videos...',sub:'Finding what already ranks for your topic'},
+  {id:'step2',main:'Analyzing competitor titles and tags...',sub:'Learning from best performing videos'},
+  {id:'step3',main:'Keyword research via Google trends...',sub:'Finding search volume and trends'},
+  {id:'step4',main:'Extracting high-volume search keywords...',sub:'Building your keyword strategy'},
+  {id:'step5',main:'Analyzing your reference thumbnail...',sub:'Understanding layout, style and colors'},
+  {id:'step6',main:'Generating full SEO package...',sub:'Titles, description, tags from real data'},
+  {id:'step7',main:'Creating Pixar 3D thumbnail prompts...',sub:'Matching your channel style'}
+];
+var stepIdx=0, stepTimer;
+
+function handleThumbUpload(input){
+  var file=input.files[0];
+  if(!file) return;
+
+  var reader=new FileReader();
+  reader.onload=function(e){
+    var img=new Image();
+    img.onload=function(){
+      // Resize to max 800x450 (16:9)  Anthropic recommends <=1568px, we keep smaller for speed
+      var MAX_W=800, MAX_H=450;
+      var w=img.width, h=img.height;
+      if(w>MAX_W||h>MAX_H){
+        var ratio=Math.min(MAX_W/w, MAX_H/h);
+        w=Math.round(w*ratio);
+        h=Math.round(h*ratio);
+      }
+      var canvas=document.createElement('canvas');
+      canvas.width=w; canvas.height=h;
+      var ctx=canvas.getContext('2d');
+      ctx.drawImage(img,0,0,w,h);
+      // Compress to JPEG quality 0.82  good quality, small size
+      var dataUrl=canvas.toDataURL('image/jpeg',0.82);
+      thumbBase64=dataUrl.split(',')[1];
+      thumbMime='image/jpeg';
+
+      var preview=document.getElementById('thumbPreview');
+      preview.src=dataUrl;
+      preview.classList.add('show');
+      document.getElementById('thumbClear').classList.add('show');
+      document.getElementById('uploadArea').classList.add('has-img');
+      document.getElementById('uploadPlaceholder').style.display='none';
+
+      // Show size info
+      var kb=Math.round(thumbBase64.length*0.75/1024);
+      var info=document.getElementById('thumbSizeInfo');
+      if(info) info.textContent=w+'x'+h+' px -- '+kb+' KB (compressed)';
+    };
+    img.src=e.target.result;
+  };
+  reader.readAsDataURL(file);
+}
+
+function clearThumb(){
+  thumbBase64=null;
+  document.getElementById('thumbFile').value='';
+  document.getElementById('thumbPreview').classList.remove('show');
+  document.getElementById('thumbPreview').src='';
+  document.getElementById('thumbClear').classList.remove('show');
+  document.getElementById('uploadArea').classList.remove('has-img');
+  document.getElementById('uploadPlaceholder').style.display='';
+  var info=document.getElementById('thumbSizeInfo');
+  if(info) info.textContent='';
+}
+
+function advanceStep(){
+  if(stepIdx>0){var prev=document.getElementById(STEPS[stepIdx-1].id);if(prev)prev.className='done';}
+  if(stepIdx<STEPS.length){
+    var cur=document.getElementById(STEPS[stepIdx].id);
+    if(cur)cur.className='active';
+    document.getElementById('loaderMain').textContent=STEPS[stepIdx].main;
+    document.getElementById('loaderSub').textContent=STEPS[stepIdx].sub;
+    stepIdx++;
+  }
+}
+
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show')},2200);}
+
+function showTab(name,el){
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('on')});
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.style.display='none';p.classList.remove('show')});
+  if(el)el.classList.add('on');
+  var p=document.getElementById('panel-'+name);
+  if(p){p.style.display='block';p.classList.add('show');}
+}
+
+function copyText(txt, btnId, successMsg){
+  successMsg = successMsg || 'Copied!';
+  // Try modern clipboard API first
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(txt).then(function(){
+      showCopied(btnId, successMsg);
+    }).catch(function(){
+      fallbackCopy(txt, btnId, successMsg);
+    });
+  } else {
+    fallbackCopy(txt, btnId, successMsg);
+  }
+}
+
+function fallbackCopy(txt, btnId, successMsg){
+  // Create a temporary textarea, select text, execCommand copy
+  var ta = document.createElement('textarea');
+  ta.value = txt;
+  ta.style.cssText = 'position:fixed;top:0;left:0;width:2em;height:2em;opacity:0;border:none;outline:none;';
+  document.body.appendChild(ta);
+  ta.focus();
+  ta.select();
+  var ok = false;
+  try { ok = document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta);
+  if(ok){ showCopied(btnId, successMsg); }
+  else { alert('Copy failed. Please select the text manually and press Ctrl+C.'); }
+}
+
+function showCopied(btnId, msg){
+  toast(msg || 'Copied!');
+  if(!btnId) return;
+  var b = document.getElementById(btnId);
+  if(!b) return;
+  var orig = b.textContent;
+  b.textContent = '? Copied!';
+  b.classList.add('ok');
+  setTimeout(function(){ b.textContent = orig; b.classList.remove('ok'); }, 2200);
+}
+
+function copyEl(id, btnId){
+  var el = document.getElementById(id);
+  if(!el) return;
+  var txt = (el.value || el.innerText || el.textContent || '').trim();
+  if(!txt){ toast('Nothing to copy yet!'); return; }
+  copyText(txt, btnId, 'Copied!');
+}
+
+function copyAllTitles(){
+  if(!allTitles.length){ toast('Generate first!'); return; }
+  copyText(allTitles.join('\n'), 'cpAllTitles', 'All 5 titles copied!');
+}
+function copyAllPrompts(){
+  if(!allPrompts.length){ toast('Generate first!'); return; }
+  copyText(allPrompts.join('\n\n---\n\n'), 'cpAllPrompts', 'All prompts copied!');
+}
+function copyAllKw(){
+  if(!allKwArr.length){ toast('Generate first!'); return; }
+  copyText(allKwArr.join(', '), 'cpAllKw', 'All keywords copied!');
+}
+function copyFullDesc(){
+  var parts = ['dp1','dp2','dp3','dp4','dp5'].map(function(id){
+    var el = document.getElementById(id);
+    return el ? el.textContent.trim() : '';
+  }).filter(Boolean);
+  if(!parts.length){ toast('Generate first!'); return; }
+  copyText(parts.join('\n\n'), 'cpDescFull', 'Full description copied!');
+}function escH(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+function safeParseJSON(raw) {
+  // Step 1: strip markdown fences
+  var s = raw.replace(/```json\s*/gi,'').replace(/```\s*/g,'').trim();
+
+  // Step 2: extract first JSON object
+  var start = s.indexOf('{');
+  if(start === -1) return null;
+  s = s.substring(start);
+
+  // Step 3: try direct parse first (fast path)
+  try { return JSON.parse(s); } catch(e1) {}
+
+  // Step 4: find the outermost balanced brace
+  var depth=0, end=-1, inStr=false, esc=false;
+  for(var i=0;i<s.length;i++){
+    var c=s[i];
+    if(esc){esc=false;continue;}
+    if(c==='\\'){esc=true;continue;}
+    if(c==='"'&&!esc){inStr=!inStr;continue;}
+    if(!inStr){
+      if(c==='{')depth++;
+      else if(c==='}'){depth--;if(depth===0){end=i;break;}}
+    }
+  }
+  if(end>0) s=s.substring(0,end+1);
+
+  // Step 5: try again after brace trimming
+  try { return JSON.parse(s); } catch(e2) {}
+
+  // Step 6: aggressive repair - fix common AI JSON mistakes
+  var repaired = s
+    // Remove control characters inside strings (newlines etc. not escaped)
+    .replace(/:\s*"((?:[^"\\]|\\.)*)"/g, function(m, inner) {
+      var fixed = inner
+        .replace(/\n/g, '\\n')
+        .replace(/\r/g, '\\r')
+        .replace(/\t/g, '\\t');
+      return ': "' + fixed + '"';
+    })
+    // Fix trailing commas before ] or }
+    .replace(/,\s*([}\]])/g, '$1')
+    // Fix missing commas between } and {
+    .replace(/}\s*\n\s*{/g, '},\n{')
+    // Fix unescaped double quotes inside string values (common in long prompts)
+    .replace(/"prompt"\s*:\s*"([\s\S]*?)(?=",\s*"(mainText|scene|subText|canvaLayout|placement))/g, function(m, inner, next) {
+      var fixedInner = inner.replace(/(?<!\\)"/g, '\\"').replace(/^\\"/, '"');
+      return '"prompt": "' + fixedInner + '", "' + next;
+    });
+
+  try { return JSON.parse(repaired); } catch(e3) {}
+
+  // Step 7: last resort - extract only the fields we can use safely
+  console.warn('Full JSON parse failed, extracting fields individually');
+  return extractFieldsSafely(s);
+}
+
+function extractFieldsSafely(s) {
+  function getArr(key) {
+    var rx = new RegExp('"'+key+'"\\s*:\\s*(\\[[\\s\\S]*?\\])', 'i');
+    var m = s.match(rx);
+    if(!m) return [];
+    try { return JSON.parse(m[1]); } catch(e) { return []; }
+  }
+  function getStr(key) {
+    var rx = new RegExp('"'+key+'"\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)"');
+    var m = s.match(rx);
+    return m ? m[1].replace(/\\n/g,'\n').replace(/\\t/g,'\t') : '';
+  }
+  function getObj(key) {
+    var rx = new RegExp('"'+key+'"\\s*:\\s*(\\{[\\s\\S]*?\\})');
+    var m = s.match(rx);
+    if(!m) return {};
+    try { return JSON.parse(m[1]); } catch(e) { return {}; }
+  }
+
+  // Extract thumbnail prompts individually since they're the most fragile
+  var thumbPrompts = [];
+  var tpRx = /"scene"\s*:\s*"([^"]*)"[\s\S]*?"prompt"\s*:\s*"((?:[^"\\]|\\.)*)"/g;
+  var tm;
+  while((tm = tpRx.exec(s)) !== null) {
+    thumbPrompts.push({
+      scene: tm[1],
+      prompt: tm[2],
+      mainText: 'SLOW ENGLISH',
+      subText: '',
+      placement: '',
+      canvaLayout: ''
+    });
+    if(thumbPrompts.length >= 4) break;
+  }
+
+  return {
+    research: getObj('research') || {},
+    titles: getArr('titles'),
+    titleAnalysis: getArr('titleAnalysis'),
+    descriptionParts: getObj('descriptionParts') || {},
+    tags: getArr('tags'),
+    hashtags: getArr('hashtags'),
+    filename: getStr('filename') || 'english-lesson-slow-english.mp4',
+    thumbnailIdeas: getArr('thumbnailIdeas'),
+    thumbnailTexts: getArr('thumbnailTexts'),
+    thumbnailPrompts: thumbPrompts.length ? thumbPrompts : getArr('thumbnailPrompts'),
+    textOverlays: getArr('textOverlays'),
+    scores: getObj('scores') || {overall:75,ctr:72,rank:74,competition:55},
+    analysis: getStr('analysis'),
+    thumbnailAnalysis: getStr('thumbnailAnalysis')
+  };
+}
+
+// -- DEDICATED description generator (plain text -- zero JSON corruption) --
+function generateDescription(topic, vtype, pkw, skw, tkw, relKws, apiKey) {
+  ['dp1','dp2','dp3','dp4'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){ el.textContent='Generating with maximum keyword density...'; el.style.color='#888'; }
+  });
+
+  var sysDsc='You are a YouTube SEO description expert. Write plain text only -- no JSON, no markdown, no backticks, no special characters, ASCII only. Output exactly 5 sections using these exact markers: [PART1] [PART2] [PART3] [PART4] [PART5]. Nothing before [PART1] and nothing after [PART5] content.';
+
+  var userDsc='Write a maximum-keyword-density YouTube SEO description.\n\n'
+    +'Topic: '+topic+'\nType: '+vtype+'\nChannel: English with Mr. E -- Slow English for all audiences\n\n'
+    +'PRIMARY keyword: '+pkw+'\nSECONDARY keyword: '+skw+'\nTERTIARY keyword: '+tkw+'\n'
+    +'Related keywords to weave in: '+relKws+'\n\n'
+    +'[PART1] HOOK -- 60-80 words\n'
+    +'Sentence 1+2: PRIMARY keyword both times. Sentence 3: SECONDARY keyword. Sentence 4: TERTIARY keyword. Make viewer feel they MUST watch NOW.\n\n'
+    +'[PART2] BODY -- 300-350 words, 4 paragraphs\n'
+    +'MANDATORY minimum usage: PRIMARY x5, SECONDARY x4, TERTIARY x3, every related keyword x1 each.\n'
+    +'Also use throughout: slow English, english lesson, english learning, speak english, english fluency, english grammar, english vocabulary, english pronunciation, english for beginners, learn english online.\n'
+    +'Natural placement. Cover: what viewer learns, why it matters, lesson key points, who benefits.\n\n'
+    +'[PART3] TIMESTAMPS -- 8-10 chapters\n'
+    +'Format exactly: 0:00 Chapter title\nUse PRIMARY and SECONDARY keywords in chapter names.\n\n'
+    +'[PART4] CALL TO ACTION\n'
+    +'Strong: LIKE + SUBSCRIBE + COMMENT with question about '+pkw+'. Playlist link placeholder. Social links.\n\n'
+    +'[PART5] HASHTAGS\n'
+    +'Exactly 5 hashtags on one line.\n\n'
+    +'IMPORTANT: Plain ASCII only. No quotes inside text. No apostrophes. No special characters. Maximum natural keyword usage.';
+
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-api-key':apiKey,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
+    body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1800,system:sysDsc,messages:[{role:'user',content:userDsc}]})
+  })
+  .then(function(r){return r.json();})
+  .then(function(data){
+    var raw=(data.content||[]).map(function(b){return b.type==='text'?b.text||'':'';}).join('');
+    function getPart(text,marker,next){
+      var s=text.indexOf('['+marker+']');
+      if(s===-1)return '';
+      s+=marker.length+2;
+      var e=next?text.indexOf('['+next+']'):text.length;
+      if(e===-1)e=text.length;
+      return text.substring(s,e).trim();
+    }
+    var p1=getPart(raw,'PART1','PART2');
+    var p2=getPart(raw,'PART2','PART3');
+    var p3=getPart(raw,'PART3','PART4');
+    var p4=getPart(raw,'PART4','PART5');
+    var p5=getPart(raw,'PART5',null);
+    function setDP(id,txt){var el=document.getElementById(id);if(!el)return;el.textContent=txt||'';el.style.color='';}
+    setDP('dp1',p1||'Hook generation failed. Please try again.');
+    setDP('dp2',p2||'Body generation failed. Please try again.');
+    setDP('dp3',p3||'Timestamps failed. Please try again.');
+    setDP('dp4',p4||'CTA failed. Please try again.');
+    setDP('dp5',p5||'#SlowEnglish #LearnEnglish #EnglishWithMrE #EnglishLesson');
+    var total=[p1,p2,p3,p4,p5].join('\n\n').length;
+    var cc=document.getElementById('descChars');
+    if(cc)cc.textContent='Total characters: '+total+' / 5000';
+    toast('SEO description ready -- maximum keywords used!');
+  })
+  .catch(function(e){
+    ['dp1','dp2','dp3','dp4'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el){el.style.color='#cc0000';el.textContent='Description failed: '+e.message;}
+    });
+    console.warn('Description error:',e);
+  });
+}
+
+// -- FALLBACK thumbnail prompts (shown instantly while 2nd API call runs) --
+function buildFallbackPrompts(topic) {
+  var t = topic.substring(0,35);
+  return [
+    { scene:'SHOCK -- Generating custom prompt...', prompt:'Analyzing your reference thumbnail and script... please wait a moment.', mainText:'SLOW ENGLISH', subText:t+' Explained', placement:'', canvaLayout:'' },
+    { scene:'AUTHORITY -- Generating...', prompt:'Custom prompt loading...', mainText:'SLOW ENGLISH', subText:t, placement:'', canvaLayout:'' },
+    { scene:'PROBLEM -- Generating...', prompt:'Custom prompt loading...', mainText:'SLOW ENGLISH', subText:'Stop This Mistake', placement:'', canvaLayout:'' },
+    { scene:'CELEBRATION -- Generating...', prompt:'Custom prompt loading...', mainText:'SLOW ENGLISH', subText:'You Can Do This!', placement:'', canvaLayout:'' }
+  ];
+}
+
+// -- DEDICATED thumbnail prompt generator (2nd API call, image-aware) --
+function generateThumbnailPrompts(topic, vtype, apiKey) {
+  var thumbPanel = document.getElementById('aiPromptsOut');
+  var loadingBanner = document.createElement('div');
+  loadingBanner.id = 'thumbLoadBanner';
+  loadingBanner.style.cssText = 'background:#e8f0fb;border:0.5px solid #b5cef5;border-radius:10px;padding:12px 16px;margin-bottom:12px;font-size:13px;color:#185FA5;display:flex;align-items:center;gap:10px';
+  loadingBanner.innerHTML = '<div style="width:18px;height:18px;border:2px solid #b5cef5;border-top-color:#185FA5;border-radius:50%;animation:sp .7s linear infinite;flex-shrink:0"></div><span>Analyzing your reference thumbnail and script to create 4 custom AI prompts...</span>';
+  if(thumbPanel) thumbPanel.insertBefore(loadingBanner, thumbPanel.firstChild);
+
+  var hasImg = !!thumbBase64;
+
+  var sysPrompt = 'You are a world-class YouTube thumbnail designer and AI image prompt expert. '
+    + 'Your job: analyze the uploaded reference thumbnail carefully, then write 4 highly detailed Pixar 3D CGI image prompts. '
+    + 'Output ONLY a raw JSON array with exactly 4 objects. No markdown. No backticks. No explanation. '
+    + 'Each object has these exact keys: scene, prompt, mainText, subText, placement, canvaLayout. '
+    + 'Keep each prompt under 120 words. Use plain ASCII only -- no special characters.';
+
+  var userMsg = 'Video topic: ' + topic + '\nVideo type: ' + vtype + '\nChannel: English with Mr. E -- Slow English learning.\n\n'
+    + (hasImg
+        ? 'I have uploaded my reference thumbnail image. Study it carefully:\n'
+          + '- What is the exact 3D cartoon art style?\n'
+          + '- What are the dominant colors and background?\n'
+          + '- What is the character emotion, pose, and camera angle?\n'
+          + '- How is the text/layout arranged?\n\n'
+          + 'Now write 4 thumbnail prompts that MATCH this exact style but show different emotions and scenes related to the video topic above.\n\n'
+        : 'No reference thumbnail uploaded. Use Pixar Inside Out / Disney 3D cartoon style.\n\n')
+    + 'Return ONLY this JSON array (no markdown, no backticks):\n'
+    + '[\n'
+    + '  {"scene":"Concept name","prompt":"detailed image generation prompt, plain text only, no special chars","mainText":"SLOW ENGLISH","subText":"4 word topic","placement":"where to put text in Canva","canvaLayout":"layout description"},\n'
+    + '  {"scene":"...","prompt":"...","mainText":"SLOW ENGLISH","subText":"...","placement":"...","canvaLayout":"..."},\n'
+    + '  {"scene":"...","prompt":"...","mainText":"SLOW ENGLISH","subText":"...","placement":"...","canvaLayout":"..."},\n'
+    + '  {"scene":"...","prompt":"...","mainText":"SLOW ENGLISH","subText":"...","placement":"...","canvaLayout":"..."}\n'
+    + ']\n\n'
+    + 'RULES: 4 completely different concepts (shock / authority / problem / celebration). '
+    + 'Each prompt specifies: character description, exact emotion with face details, body pose, camera angle, background scene, lighting setup, render quality. '
+    + 'Keep every string value under 120 words. Plain ASCII only.';
+
+  var msgContent;
+  if(hasImg) {
+    msgContent = [
+      {type:'image', source:{type:'base64', media_type:thumbMime, data:thumbBase64}},
+      {type:'text', text:userMsg}
+    ];
+  } else {
+    msgContent = userMsg;
+  }
+
+  fetch('https://api.anthropic.com/v1/messages', {
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
+    body: JSON.stringify({
+      model:'claude-sonnet-4-20250514',
+      max_tokens:1500,
+      system: sysPrompt,
+      messages:[{role:'user', content: msgContent}]
+    })
+  })
+  .then(function(r){ return r.json(); })
+  .then(function(data){
+    var raw = (data.content||[]).map(function(b){ return b.type==='text'?b.text||'':''; }).join('');
+    // Clean and parse the array
+    var clean = raw.replace(/```json\s*/gi,'').replace(/```\s*/g,'').trim();
+    var arrStart = clean.indexOf('[');
+    var arrEnd = clean.lastIndexOf(']');
+    if(arrStart === -1 || arrEnd === -1) throw new Error('No array found');
+    var arrStr = clean.substring(arrStart, arrEnd+1);
+
+    // Repair common issues: trailing commas, unescaped chars
+    arrStr = arrStr
+      .replace(/,\s*([}\]])/g,'$1')
+      .replace(/[\u2014\u2013]/g,'--')
+      .replace(/[\u2018\u2019]/g,"'")
+      .replace(/[\u201c\u201d]/g,'"');
+
+    var prompts;
+    try {
+      prompts = JSON.parse(arrStr);
+    } catch(e) {
+      // Try extracting objects one by one
+      prompts = [];
+      var objRx = /\{[^{}]*"scene"[^{}]*"prompt"[^{}]*\}/g;
+      var m;
+      while((m = objRx.exec(arrStr)) !== null) {
+        try { prompts.push(JSON.parse(m[0])); } catch(e2){}
+        if(prompts.length >= 4) break;
+      }
+    }
+
+    if(!prompts || !prompts.length) throw new Error('Could not parse thumbnail prompts');
+
+    // Update the AI prompts panel with fresh prompts
+    var banner = document.getElementById('thumbLoadBanner');
+    if(banner) banner.remove();
+
+    // Re-render just the AI prompts section
+    var apc = document.getElementById('aiPromptsOut');
+    if(apc) {
+      apc.innerHTML = '';
+      var allPromptsArr = [];
+      prompts.forEach(function(tp, i){
+        var fullCopy = 'PROMPT '+(i+1)+': '+((tp.scene)||'')+'\n\n'
+          +'IMAGE PROMPT:\n'+(tp.prompt||'')+'\n\n'
+          +'TEXT OVERLAY:\nMain: '+(tp.mainText||'SLOW ENGLISH')+'\nSubtitle: '+(tp.subText||'')+'\nPlacement: '+(tp.placement||'');
+        allPrompts.push(fullCopy);
+        allPromptsArr.push(fullCopy);
+
+        var div = document.createElement('div'); div.className='prompt-card-v2';
+        var hdr2 = document.createElement('div'); hdr2.className='prompt-card-v2-hdr';
+        var lbl = document.createElement('span'); lbl.className='prompt-lbl'; lbl.textContent='Prompt '+(i+1)+(hasImg?' (from your thumbnail)':'');
+        var copyBtn2 = document.createElement('button'); copyBtn2.className='cp'; copyBtn2.textContent='Copy';
+        (function(txt){ copyBtn2.addEventListener('click', function(){ copyText(txt,null,'Prompt '+(i+1)+' copied!'); }); })(fullCopy);
+        hdr2.appendChild(lbl); hdr2.appendChild(copyBtn2);
+
+        var scene = document.createElement('div'); scene.className='prompt-scene'; scene.textContent=tp.scene||'';
+        var ptxtLbl = document.createElement('div'); ptxtLbl.style.cssText='font-size:10px;font-weight:700;color:#185FA5;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px;margin-top:8px'; ptxtLbl.textContent='Image Prompt (Midjourney / DALL-E 3 / Leonardo AI)';
+        var ptxt = document.createElement('div'); ptxt.className='prompt-txt'; ptxt.textContent=tp.prompt||'';
+
+        var toBox = document.createElement('div'); toBox.className='prompt-text-overlay';
+        var toLbl = document.createElement('div'); toLbl.className='prompt-text-overlay-lbl'; toLbl.textContent='Text Overlay for Canva';
+        var toPrev = document.createElement('div'); toPrev.className='pto-preview';
+        var toRed = document.createElement('span'); toRed.className='pto-red'; toRed.textContent=tp.mainText||'SLOW ENGLISH';
+        var toDark = document.createElement('span'); toDark.className='pto-dark'; toDark.textContent=tp.subText||'';
+        toPrev.appendChild(toRed); toPrev.appendChild(toDark);
+        var toPlacement = document.createElement('div'); toPlacement.className='pto-placement'; toPlacement.textContent=tp.placement||'';
+        toBox.appendChild(toLbl); toBox.appendChild(toPrev); toBox.appendChild(toPlacement);
+        if(tp.canvaLayout){
+          var canvaDiv = document.createElement('div');
+          canvaDiv.style.cssText='font-size:11px;color:#6B3FA0;margin-top:5px;padding:4px 8px;background:#f5f0ff;border-radius:5px;border-left:2px solid #b085f5';
+          canvaDiv.textContent='Canva: '+tp.canvaLayout;
+          toBox.appendChild(canvaDiv);
+        }
+
+        var copyAllBtn = document.createElement('button'); copyAllBtn.className='prompt-copy-all'; copyAllBtn.textContent='Copy Prompt + Text Overlay';
+        (function(txt, btn, idx){ btn.addEventListener('click', function(){
+          copyText(txt, null, 'Prompt '+(idx+1)+' copied!');
+          btn.textContent='Copied!'; btn.classList.add('ok');
+          setTimeout(function(){ btn.textContent='Copy Prompt + Text Overlay'; btn.classList.remove('ok'); }, 2500);
+        }); })(fullCopy, copyAllBtn, i);
+
+        div.appendChild(hdr2); div.appendChild(scene); div.appendChild(ptxtLbl); div.appendChild(ptxt); div.appendChild(toBox); div.appendChild(copyAllBtn);
+        apc.appendChild(div);
+      });
+    }
+
+    toast('Custom thumbnail prompts ready!');
+  })
+  .catch(function(e){
+    var banner = document.getElementById('thumbLoadBanner');
+    if(banner){ banner.style.background='#fff0f0'; banner.style.borderColor='#ffb3b3'; banner.style.color='#cc0000'; banner.querySelector('div').style.display='none'; banner.querySelector('span').textContent='Thumbnail prompt generation failed. Using default prompts. Error: '+e.message; }
+    console.warn('Thumbnail prompt error:', e);
+  });
+}
+
+function startGenerate(){
+  var inp=document.getElementById('inp').value.trim();
+  if(!inp){alert('Please enter your video topic first!');return;}
+  var vtype=document.getElementById('vtype').value;
+  var level=document.getElementById('level').value;
+  var vlen=document.getElementById('vlen').value;
+  var xkw=document.getElementById('xkw').value;
+  var cstyle=document.getElementById('cstyle').value;
+  var hasThumb=!!thumbBase64;
+
+  document.getElementById('genBtn').disabled=true;
+  document.getElementById('loaderCard').style.display='block';
+  document.getElementById('outputWrap').className='output-wrap';
+  stepIdx=0;
+  STEPS.forEach(function(s){var el=document.getElementById(s.id);if(el)el.className='';});
+  advanceStep();
+  stepTimer=setInterval(advanceStep,2000);
+
+  var sInp=inp.replace(/[\\"`]/g,' ').replace(/\$/g,'').trim();
+  var sXkw=xkw.replace(/[\\"`]/g,' ').replace(/\$/g,'').trim();
+
+  var system='You are the #1 YouTube SEO expert in the world. Channel: "English with Mr. E" - Slow English learning, all audiences worldwide. Create MAXIMUM-IMPACT SEO that dominates YouTube algorithm.\n\n'
+    +'TITLE RULES -- VIRAL CLICKBAIT (honest):\n'
+    +'- PRIMARY keyword in first 6 words\n'
+    +'- Power words: Finally, Nobody Tells You, Stop Making This, The Secret, Instantly, Master, Shocking\n'
+    +'- Create hard curiosity gap -- viewer cannot resist clicking\n'
+    +'- Mix 5 formats: number list / how-to / question / shock-reveal / you-based\n'
+    +'- Max 60 chars, mobile-optimized\n\n'
+    +'OFFLINE SEO: Tags 500 char limit, high-volume first. Filename hyphenated keyword.\n'
+    +'Return raw valid JSON only -- no markdown, no backticks. Keep ALL string values SHORT (under 60 chars each) to prevent JSON corruption.';
+
+  var jsonStructure='{'
+    +'"research":{'
+      +'"competitors":[{"title":"real title","channel":"channel","views":"views","insight":"why it ranks"},{"title":"...","channel":"...","views":"...","insight":"..."},{"title":"...","channel":"...","views":"...","insight":"..."},{"title":"...","channel":"...","views":"...","insight":"..."}],'
+      +'"keywords":[{"keyword":"PRIMARY keyword","volume":"High","trend":92,"difficulty":"Medium","keywordType":"primary"},{"keyword":"SECONDARY keyword","volume":"High","trend":85,"difficulty":"Low","keywordType":"secondary"},{"keyword":"TERTIARY keyword","volume":"Medium","trend":76,"difficulty":"Low","keywordType":"tertiary"},{"keyword":"related kw 4","volume":"Medium","trend":68,"difficulty":"Low","keywordType":"related"},{"keyword":"related kw 5","volume":"Low","trend":55,"difficulty":"Low","keywordType":"related"}],'
+      +'"longTailKeywords":["long tail 1","long tail 2","long tail 3","long tail 4","long tail 5"],'
+      +'"primaryKeyword":"most important keyword",'
+      +'"secondaryKeyword":"2nd keyword",'
+      +'"tertiaryKeyword":"3rd keyword",'
+      +'"summary":"brief research summary"'
+    +'},'
+    +'"titles":["title 1","title 2","title 3","title 4","title 5"],'
+    +'"titleAnalysis":["CTR reason 1","CTR reason 2","CTR reason 3","CTR reason 4","CTR reason 5"],'
+    +'"tags":["primary kw","secondary kw","tertiary kw","learn english","slow english","english lesson","english grammar","english speaking","spoken english","english for beginners","english with mr e","english pronunciation","english vocabulary","english conversation","slow english lesson"],'
+    +'"hashtags":["#SlowEnglish","#LearnEnglish","#TopicTag","#EnglishWithMrE","#EnglishLesson"],'
+    +'"filename":"primary-keyword-slow-english.mp4",'
+    +'"thumbnailIdeas":[{"idea":"SHOCK: close-up shock face, red-orange bg","reason":"highest CTR trigger","ctrTip":"enlarge eyes 20%"},{"idea":"AUTHORITY: teacher pointing, classroom bg","reason":"trust + learning desire","ctrTip":"floating text curiosity"},{"idea":"PROBLEM: confused student, red-green split","reason":"self-recognition click","ctrTip":"red X = instant CTR"},{"idea":"CELEBRATION: victory arms raised, confetti","reason":"aspirational desire","ctrTip":"upward angle = energy"},{"idea":"MYSTERY: magnifying glass, dark spotlight","reason":"irresistible curiosity","ctrTip":"single spotlight drama"}],'
+    +'"thumbnailTexts":["SLOW ENGLISH explained","master this topic","stop this mistake","you can do this","the secret revealed"],'
+    +'"textOverlays":[{"mainText":"SLOW ENGLISH","subText":"topic here","style":"bold white, red outline, bottom-left"},{"mainText":"SLOW ENGLISH","subText":"topic here","style":"centered bold, dark overlay"},{"mainText":"SLOW ENGLISH","subText":"topic here","style":"top-right, character left"}],'
+    +'"scores":{"overall":92,"ctr":88,"rank":90,"competition":55},'
+    +'"analysis":"CTR strengths, SEO gaps, best upload time, growth tips, keyword targets"'
+  +'}';
+
+  // -- Run ALL free APIs in parallel, then main generate --
+  document.getElementById('loaderMain').textContent='Fetching live YouTube + keyword data...';
+  var ytKey=(document.getElementById('ytApiKey').value||'').trim();
+
+  Promise.all([
+    fetchAllFreeKeywords(sInp),
+    fetchWithTimeout(fetchYouTubeDataAPI(sInp+' english learning slow', ytKey), 5000)
+  ]).then(function(results){
+    var freeKws=results[0]||[];
+    var ytData1=results[1];
+
+    var ytVideos=[];
+    if(ytData1&&ytData1.videos) ytVideos=ytVideos.concat(ytData1.videos);
+
+    var freeKwStr=freeKws.length?freeKws.join(', '):'(none found)';
+
+    // Build real YouTube data string for prompt
+    var ytDataStr='';
+    if(ytVideos.length){
+      ytDataStr='\n\nREAL YouTube Data API v3 Results -- use these exact titles and channels in research.competitors:\n';
+      ytVideos.slice(0,6).forEach(function(v,i){
+        ytDataStr+=(i+1)+'. Title: "'+v.title+'" | Channel: @'+v.channel+' | '+v.viewsFormatted+' | Published: '+v.publishedAt+'\n';
+        if(v.description) ytDataStr+='   Desc: '+v.description+'...\n';
+      });
+    }
+
+    var userText='Generate complete YouTube SEO for:\n'
+    +'Topic: '+sInp+'\nType: '+vtype+' | Level: '+level+' | Length: '+vlen+'\n'
+    +'Extra keywords: '+sXkw+' | Style: '+cstyle+'\n'
+    +'Channel: English with Mr. E - Slow English for all audiences\n'
+    +(hasThumb?'Reference thumbnail: attached image - analyze it carefully\n':'\n')
+    +ytDataStr
+    +'\nFREE keywords from YouTube Autocomplete + Google Suggest + Datamuse:\n'
+    +freeKwStr
+    +'\nOutput ONLY this JSON (no markdown, no backticks):\n'
+    +jsonStructure
+    +'\n\nRules: 25-30 tags max 500 chars. Scores 60-97. Filename uses hyphens.'
+    +(ytVideos.length?' Use the REAL YouTube video data above in research.competitors.':' Base competitors on the free keyword data provided.')
+    +' Use the free keywords in tags.';
+
+  // Build messages  NO image in main call (speeds it up significantly)
+  var messages=[{role:'user',content:userText}];
+
+  var apiKey = (document.getElementById('apiKeyInput').value || '').trim();
+  if(!apiKey){
+    alert('Please enter your Anthropic API key.\nGet it at: console.anthropic.com/settings/keys');
+    document.getElementById('genBtn').disabled=false;
+    document.getElementById('loaderCard').style.display='none';
+    clearInterval(stepTimer);
+    return;
+  }
+
+  // MAIN API call  no web_search (we already have real data from free APIs)
+  fetch('https://api.anthropic.com/v1/messages',{
+    method:'POST',
+    headers:{
+      'Content-Type':'application/json',
+      'x-api-key': apiKey,
+      'anthropic-version':'2023-06-01',
+      'anthropic-dangerous-direct-browser-access':'true'
+    },
+    body:JSON.stringify({
+      model:'claude-sonnet-4-20250514',
+      max_tokens:3000,
+      system:system,
+      messages:messages
+    })
+  })
+  .then(function(r){
+    if(!r.ok){
+      return r.text().then(function(txt){
+        try{
+          var j=JSON.parse(txt);
+          if(j.type==='exceeded_limit') throw new Error(JSON.stringify(j));
+          var msg=j.error&&j.error.message?j.error.message:'API error '+r.status;
+          throw new Error(msg);
+        }catch(pe){
+          if(pe.message&&pe.message.indexOf('{')===0) throw pe;
+          throw new Error('API error '+r.status+': '+txt.substring(0,120));
+        }
+      });
+    }
+    return r.json();
+  })
+  .then(function(data){
+    clearInterval(stepTimer);
+    STEPS.forEach(function(s){var el=document.getElementById(s.id);if(el)el.className='done';});
+    document.getElementById('loaderCard').style.display='none';
+    document.getElementById('genBtn').disabled=false;
+    var raw=(data.content||[]).map(function(b){return b.type==='text'?b.text||'':''}).join('');
+    var d = safeParseJSON(raw);
+    if(!d) throw new Error('Could not parse AI response. Please try again.');
+
+    // Show SEO results immediately
+    d.thumbnailPrompts = buildFallbackPrompts(sInp);
+    d.descriptionParts = {
+      part1_mainKeyword: 'Generating keyword-rich hook...',
+      part2_body: 'Generating 300-word body with max keyword density...',
+      part3_timestamps: 'Building chapter timestamps...',
+      part4_cta: 'Writing call-to-action...',
+      part5_hashtags: '#SlowEnglish #LearnEnglish #EnglishWithMrE #EnglishLesson'
+    };
+    renderAll(d, hasThumb, freeKws, ytVideos);
+
+    // 2nd + 3rd calls run IN PARALLEL  much faster
+    var pkw = (d.research && d.research.primaryKeyword) || sInp;
+    var skw = (d.research && d.research.secondaryKeyword) || ('learn ' + sInp);
+    var tkw = (d.research && d.research.tertiaryKeyword) || ('english ' + sInp);
+    var relKws = (d.research && d.research.keywords || []).map(function(k){ return k.keyword; }).join(', ');
+
+    // Fire both at the same time
+    generateDescription(sInp, vtype, pkw, skw, tkw, relKws, apiKey);
+    generateThumbnailPrompts(sInp, vtype, apiKey);
+  })
+  .catch(function(e){
+    clearInterval(stepTimer);
+    document.getElementById('loaderCard').style.display='none';
+    document.getElementById('genBtn').disabled=false;
+    try{
+      var parsed=JSON.parse(e.message);
+      if(parsed&&parsed.type==='exceeded_limit'){showRateLimit(parsed);return;}
+    }catch(pe){}
+    if(e.message&&e.message.indexOf('exceeded_limit')>-1){showRateLimit(null);return;}
+    alert('Error: '+e.message+'\nPlease try again.');
+    console.error(e);
+  });
+
+  }).catch(function(e){
+    clearInterval(stepTimer);
+    document.getElementById('loaderCard').style.display='none';
+    document.getElementById('genBtn').disabled=false;
+    alert('Data fetch error: '+e.message);
+    console.error(e);
+  });
+}
+
+function renderAll(d, hadThumb, freeKws, ytVideos){
+  var res=d.research||{};
+  freeKws=freeKws||[];
+  ytVideos=ytVideos||[];
+
+  // --- FREE KEYWORDS banner ---
+  var freeBox=document.getElementById('freeKwBox');
+  if(freeBox&&freeKws.length){
+    freeBox.style.display='block';
+    var fwc=document.getElementById('freeKwChips');fwc.innerHTML='';
+    freeKws.forEach(function(kw){
+      var s=document.createElement('span');s.className='tag';s.textContent=kw;
+      s.addEventListener('click',function(){copyText(kw, null, '"'+kw+'" copied!');});
+      fwc.appendChild(s);
+    });
+  }
+
+  // --- REAL YOUTUBE API v3 competitor cards ---
+  var ytApiBox=document.getElementById('ytApiBox');
+  var ytApiList=document.getElementById('ytApiList');
+  if(ytApiBox&&ytApiList&&ytVideos.length){
+    ytApiBox.style.display='block';
+    ytApiList.innerHTML='';
+    ytVideos.slice(0,6).forEach(function(v){
+      var div=document.createElement('div');div.className='competitor-item';
+      div.innerHTML='<div class="comp-title"><a href="https://youtube.com/watch?v='+escH(v.videoId)+'" target="_blank" style="color:#185FA5;text-decoration:none">'+escH(v.title)+'</a></div>'
+        +'<div class="comp-meta">@'+escH(v.channel)
+        +' &nbsp;?&nbsp; <strong style="color:#FF0000">'+escH(v.viewsFormatted)+'</strong>'
+        +(v.publishedAt?' &nbsp;?&nbsp; '+escH(v.publishedAt):'')+'</div>';
+      ytApiList.appendChild(div);
+    });
+  }
+
+  // --- RESEARCH ---
+  var cl=document.getElementById('competitorsList');cl.innerHTML='';
+  (res.competitors||[]).forEach(function(c){
+    var div=document.createElement('div');div.className='competitor-item';
+    div.innerHTML='<div class="comp-title">'+escH(c.title)+'</div>'
+      +'<div class="comp-meta">'+(c.channel?'@'+escH(c.channel)+' &middot; ':'')+escH(c.insight)+'</div>';
+    cl.appendChild(div);
+  });
+
+  var kr=document.getElementById('keywordsListResearch');kr.innerHTML='';
+  (res.keywords||[]).forEach(function(k){
+    var row=document.createElement('div');row.className='kw-row';
+    var volC=k.volume==='High'?'#1a7a1a':k.volume==='Medium'?'#BA7517':'#999';
+    row.innerHTML='<div style="font-size:12px;color:#333;margin-bottom:3px">'
+      +escH(k.keyword)
+      +' <span style="font-size:10px;font-weight:700;color:'+volC+'">'+escH(k.volume||'')+'</span>'
+      +'</div>'
+      +'<div class="trend-bar"><div class="trend-fill" style="width:'+Math.min(100,k.trend||50)+'%"></div></div>';
+    kr.appendChild(row);
+  });
+
+  document.getElementById('researchSummary').textContent=res.summary||'';
+
+  // --- KEYWORD RESEARCH TAB ---
+  allKwArr=[];
+  var kwOut=document.getElementById('kwResearchOut');kwOut.innerHTML='';
+  (res.keywords||[]).forEach(function(k,i){
+    allKwArr.push(k.keyword);
+    var card=document.createElement('div');card.className='kw-card';
+    var volCls=k.volume==='High'?'hi':k.volume==='Medium'?'mid':'lo';
+    var diffColor=k.difficulty==='High'?'#E24B4A':k.difficulty==='Medium'?'#BA7517':'#1a7a1a';
+    var typeBadge='';
+    if(k.keywordType==='primary') typeBadge='<span style="background:#FF0000;color:#fff;font-size:10px;font-weight:800;padding:2px 7px;border-radius:20px;margin-left:6px">PRIMARY</span>';
+    else if(k.keywordType==='secondary') typeBadge='<span style="background:#BA7517;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:6px">SECONDARY</span>';
+    else if(k.keywordType==='tertiary') typeBadge='<span style="background:#185FA5;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:20px;margin-left:6px">TERTIARY</span>';
+    card.innerHTML='<div class="kw-card-top">'
+      +'<span class="kw-name">'+escH(k.keyword)+typeBadge+'</span>'
+      +'<span class="kw-vol '+volCls+'">'+escH(k.volume||'')+' Volume</span>'
+      +'</div>'
+      +'<div class="kw-meta">Search Trend Score: '+escH(String(k.trend||0))+'/100</div>'
+      +'<div class="trend-bar" style="margin-bottom:6px"><div class="trend-fill" style="width:'+Math.min(100,k.trend||50)+'%"></div></div>'
+      +'<div class="kw-diff">Competition: <span style="font-weight:700;color:'+diffColor+'">'+escH(k.difficulty||'Medium')+'</span></div>';
+    var btn=document.createElement('button');btn.className='cp';btn.style.marginTop='7px';btn.textContent='Copy';
+    (function(kw){btn.addEventListener('click',function(){copyText(kw, null, '"'+kw+'" copied!');})})(k.keyword);
+    card.appendChild(btn);
+    kwOut.appendChild(card);
+  });
+
+  var ltOut=document.getElementById('longTailOut');ltOut.innerHTML='';
+  (res.longTailKeywords||[]).forEach(function(lt){
+    var s=document.createElement('span');s.className='tag';s.textContent=lt;
+    s.addEventListener('click',function(){copyText(lt, null, '"'+lt+'" copied!');});
+    ltOut.appendChild(s);
+  });
+
+  // --- TITLES ---
+  allTitles=d.titles||[];
+  var titleAnalysis=d.titleAnalysis||[];
+  var tc=document.getElementById('titlesOut');tc.innerHTML='';
+  allTitles.forEach(function(t,i){
+    var div=document.createElement('div');div.className='title-item';div.style.flexDirection='column';div.style.gap='5px';
+    var topRow=document.createElement('div');topRow.style.cssText='display:flex;align-items:flex-start;gap:9px;width:100%';
+    var btn=document.createElement('button');btn.className='cp';btn.style.flexShrink='0';btn.textContent='Copy';
+    (function(title,idx,b){b.addEventListener('click',function(e){e.stopPropagation();copyText(title,null,'Title '+(idx+1)+' copied!');})})(t,i,btn);
+    var num=document.createElement('span');num.className='tnum';num.textContent=i+1;
+    var txt=document.createElement('span');txt.className='ttxt';txt.textContent=t;
+    topRow.appendChild(num);topRow.appendChild(txt);topRow.appendChild(btn);
+    div.appendChild(topRow);
+    if(titleAnalysis[i]){
+      var why=document.createElement('div');
+      why.style.cssText='font-size:11px;color:#1a7a1a;background:#f0fff4;border-radius:5px;padding:4px 8px;margin-left:25px;border-left:2px solid #9fcf9f';
+      why.textContent='CTR: '+titleAnalysis[i];
+      div.appendChild(why);
+    }
+    div.addEventListener('click',function(){document.querySelectorAll('.title-item').forEach(function(x){x.classList.remove('sel')});div.classList.add('sel')});
+    tc.appendChild(div);
+  });
+
+  // --- DESCRIPTION -- 5 parts ---
+  var dp=d.descriptionParts||{};
+  // Fallback: if AI returned old flat 'description' field, put it all in part2
+  var p1=dp.part1_mainKeyword||d.description||'';
+  var p2=dp.part2_body||'';
+  var p3=dp.part3_timestamps||'';
+  var p4=dp.part4_cta||'';
+  var p5=dp.part5_hashtags||'';
+  document.getElementById('dp1').textContent=p1;
+  document.getElementById('dp2').textContent=p2;
+  document.getElementById('dp3').textContent=p3;
+  document.getElementById('dp4').textContent=p4;
+  document.getElementById('dp5').textContent=p5;
+  var totalChars=[p1,p2,p3,p4,p5].join('\n\n').length;
+  document.getElementById('descChars').textContent='Total characters: '+totalChars+' / 5000';
+
+  // HASHTAGS
+  var hc=document.getElementById('hashtagsOut');hc.innerHTML='';
+  (d.hashtags||[]).forEach(function(h){
+    var s=document.createElement('span');s.className='htag';s.textContent=h;
+    s.addEventListener('click',function(){copyText(h, null, h+' copied!');});
+    hc.appendChild(s);
+  });
+
+  // FILENAME
+  var fn=d.filename||'english-lesson.mp4';
+  document.getElementById('filenameVal').textContent=fn;
+
+  // --- TAGS -- enforce 500 char YouTube limit ---
+  var rawTags = d.tags || [];
+  var trimmedTags = [];
+  var charCount = 0;
+  var TAG_LIMIT = 500;
+  for(var ti=0; ti<rawTags.length; ti++){
+    var tg = rawTags[ti].trim();
+    if(!tg) continue;
+    // Each tag separated by comma+space except first
+    var addLen = trimmedTags.length===0 ? tg.length : tg.length + 2;
+    if(charCount + addLen > TAG_LIMIT) break;
+    trimmedTags.push(tg);
+    charCount += addLen;
+  }
+
+  var tc2=document.getElementById('tagsOut');tc2.innerHTML='';
+  trimmedTags.forEach(function(tag,i){
+    var s=document.createElement('span');
+    s.className='tag'+(i<3?' p1':i<7?' p2':'');
+    s.textContent=tag;
+    (function(tg){s.addEventListener('click',function(){copyText(tg,null,'"'+tg+'" copied!');})})(tag);
+    tc2.appendChild(s);
+  });
+
+  var flatTags = trimmedTags.join(', ');
+  document.getElementById('hiddenTags').value = flatTags;
+
+  // Update tag char counter
+  var tagCounter = document.getElementById('tagCharCounter');
+  if(tagCounter){
+    tagCounter.textContent = flatTags.length+' / 500 characters ? '+trimmedTags.length+' tags';
+    tagCounter.style.color = flatTags.length > 480 ? '#E24B4A' : flatTags.length > 400 ? '#BA7517' : '#1a7a1a';
+  }
+  var droppedCount = rawTags.length - trimmedTags.length;
+  var tagDropWarn = document.getElementById('tagDropWarn');
+  if(tagDropWarn){
+    if(droppedCount > 0){
+      tagDropWarn.style.display='block';
+      tagDropWarn.textContent = droppedCount+' tag(s) removed to stay within 500 characters.';
+    } else {
+      tagDropWarn.style.display='none';
+    }
+  }
+
+  // --- THUMBNAIL ANALYSIS ---
+  if(hadThumb && d.thumbnailAnalysis && d.thumbnailAnalysis.length>10){
+    document.getElementById('thumbAnalysisWrap').style.display='block';
+    document.getElementById('thumbAnalysisOut').textContent=d.thumbnailAnalysis;
+    document.getElementById('thumbAnalysisWrap2').style.display='block';
+    document.getElementById('thumbAnalysisOut2').textContent=d.thumbnailAnalysis;
+  }
+
+  // THUMBNAILS
+  var thc=document.getElementById('thumbsOut');thc.innerHTML='';
+  (d.thumbnailIdeas||[]).forEach(function(th,i){
+    var div=document.createElement('div');div.className='thumb-item';
+    var ctrTip=th.ctrTip?'<div style="font-size:11px;color:#6B3FA0;background:#f5f0ff;border-radius:5px;padding:3px 8px;margin-top:4px;border-left:2px solid #b085f5">Design tip: '+escH(th.ctrTip)+'</div>':'';
+    div.innerHTML='<span class="thn">'+(i+1)+'</span>'
+      +'<div style="flex:1"><div class="th-main">'+escH(th.idea||th)+'</div>'
+      +'<div class="th-why">'+escH(th.reason||'')+'</div>'
+      +ctrTip+'</div>';
+    thc.appendChild(div);
+  });
+  var ttc=document.getElementById('thumbTextsOut');ttc.innerHTML='';
+  (d.thumbnailTexts||[]).forEach(function(tx){
+    var s=document.createElement('span');s.className='tag';s.textContent=tx;
+    s.addEventListener('click',function(){copyText(tx, null, 'Copied!');});
+    ttc.appendChild(s);
+  });
+
+  // --- AI PROMPTS -- combined prompt + text overlay per card ---
+  allPrompts=[];
+  var apc=document.getElementById('aiPromptsOut');apc.innerHTML='';
+  (d.thumbnailPrompts||[]).forEach(function(tp,i){
+    var fullCopy='=== PROMPT '+(i+1)+': '+escH(tp.scene||'')+' ===\n\n'
+      +'IMAGE PROMPT (paste into Midjourney / DALL-E 3):\n'+(tp.prompt||'')+'\n\n'
+      +'TEXT OVERLAY:\nMain: '+(tp.mainText||'SLOW ENGLISH')+'\nSubtitle: '+(tp.subText||'')+'\nPlacement: '+(tp.placement||'');
+    allPrompts.push(fullCopy);
+
+    var div=document.createElement('div');div.className='prompt-card-v2';
+
+    // header
+    var hdr2=document.createElement('div');hdr2.className='prompt-card-v2-hdr';
+    var lbl=document.createElement('span');lbl.className='prompt-lbl';lbl.textContent='Prompt '+(i+1);
+    hdr2.appendChild(lbl);
+    div.appendChild(hdr2);
+
+    // scene
+    var scene=document.createElement('div');scene.className='prompt-scene';scene.textContent=tp.scene||'';
+    div.appendChild(scene);
+
+    // image prompt
+    var ptxtLbl=document.createElement('div');ptxtLbl.style.cssText='font-size:10px;font-weight:700;color:#185FA5;text-transform:uppercase;letter-spacing:.4px;margin-bottom:4px';ptxtLbl.textContent='Image Prompt (Midjourney / DALL-E 3)';
+    div.appendChild(ptxtLbl);
+    var ptxt=document.createElement('div');ptxt.className='prompt-txt';ptxt.textContent=tp.prompt||'';
+    div.appendChild(ptxt);
+
+    // text overlay section
+    var toBox=document.createElement('div');toBox.className='prompt-text-overlay';
+    var toLbl=document.createElement('div');toLbl.className='prompt-text-overlay-lbl';toLbl.textContent='Text Overlay for Canva';
+    var toPrev=document.createElement('div');toPrev.className='pto-preview';
+    var toRed=document.createElement('span');toRed.className='pto-red';toRed.textContent=tp.mainText||'SLOW ENGLISH';
+    var toDark=document.createElement('span');toDark.className='pto-dark';toDark.textContent=tp.subText||'';
+    toPrev.appendChild(toRed);toPrev.appendChild(toDark);
+    var toPlacement=document.createElement('div');toPlacement.className='pto-placement';toPlacement.textContent=tp.placement||'';
+    toBox.appendChild(toLbl);toBox.appendChild(toPrev);toBox.appendChild(toPlacement);
+    if(tp.canvaLayout){
+      var canvaDiv=document.createElement('div');
+      canvaDiv.style.cssText='font-size:11px;color:#6B3FA0;margin-top:5px;padding:4px 8px;background:#f5f0ff;border-radius:5px;border-left:2px solid #b085f5';
+      canvaDiv.textContent='Canva: '+tp.canvaLayout;
+      toBox.appendChild(canvaDiv);
+    }
+    div.appendChild(toBox);
+
+    // single COPY ALL button
+    var copyBtn=document.createElement('button');copyBtn.className='prompt-copy-all';copyBtn.textContent='Copy Prompt + Text Overlay';
+    (function(txt,btn,idx){
+      btn.addEventListener('click',function(){
+        copyText(txt, null, 'Prompt '+(idx+1)+' copied!');
+        btn.textContent='? Copied!';btn.classList.add('ok');
+        setTimeout(function(){btn.textContent='Copy Prompt + Text Overlay';btn.classList.remove('ok');},2500);
+      });
+    })(fullCopy,copyBtn,i);
+    div.appendChild(copyBtn);
+
+    apc.appendChild(div);
+  });
+
+  // Keep legacy text overlays section too (separate)
+  var toc=document.getElementById('textOverlaysOut');toc.innerHTML='';
+  (d.textOverlays||[]).forEach(function(ov){
+    var div=document.createElement('div');div.className='overlay-card';
+    var prev=document.createElement('div');prev.className='ov-preview';
+    var red=document.createElement('span');red.className='ov-red';red.textContent=ov.mainText||'SLOW ENGLISH';
+    var dark=document.createElement('span');dark.className='ov-dark';dark.textContent=ov.subText||'';
+    prev.appendChild(red);prev.appendChild(dark);
+    var sty=document.createElement('div');sty.className='ov-style';sty.textContent=ov.style||'';
+    div.appendChild(prev);div.appendChild(sty);
+    toc.appendChild(div);
+  });
+
+  // --- SCORES ---
+  var sc=d.scores||{};
+  function setS(id,val,invert){
+    var el=document.getElementById(id);if(!el)return;
+    el.textContent=val+'%';
+    var cls=invert?(val<=40?'hi':val<=65?'mid':'lo'):(val>=80?'hi':val>=65?'mid':'lo');
+    el.className='score-val '+cls;
+  }
+  setS('s1',sc.overall||0,false);setS('s2',sc.ctr||0,false);
+  setS('s3',sc.rank||0,false);setS('s4',sc.competition||0,true);
+  document.getElementById('analysisOut').textContent=d.analysis||'';
+
+  document.getElementById('outputWrap').className='output-wrap show';
+  showTab('research',document.querySelector('.tab'));
+}
+</script>
+</body>
+</html>
